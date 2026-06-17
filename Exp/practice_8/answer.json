@@ -1,0 +1,33 @@
+{
+    "Enumeration": [
+        "BusStatus(NORMAL, UNDER_MAINTENANCE)",
+        "DriverStatus(ACTIVE, SICK_LEAVE)",
+        "Gender(MALE, FEMALE)",
+        "ShiftType(MORNING, AFTERNOON, NIGHT)",
+        "TripStatus(NORMAL, CANCELLED)"
+    ],
+    "Class": [
+        "abstract Bus(String: plateNumber, int: maxCapacity, BusStatus: status)",
+        "FuelBus(double: fuelLevel)",
+        "ElectricBus(double: batteryLevel)",
+        "Driver(String: driverId, String: name, Gender: gender, int: age, DriverStatus: status)",
+        "Route(int: routeNumber, List<Stop>: stops)",
+        "Stop(String: stopName, String: location)",
+        "RouteAssignment(String: assignmentId, LocalDate: date, Route: route, Bus: bus)",
+        "Shift(String: shiftId, LocalDate: date, RouteAssignment: routeAssignment, ShiftType: shiftType, LocalTime: departureTime, Driver: driver, TripStatus: status)"
+    ],
+    "Relationship": [
+        "FuelBus extends Bus",
+        "ElectricBus extends Bus",
+        "RouteAssignment associates Route",
+        "RouteAssignment associates Bus",
+        "Shift associates RouteAssignment",
+        "Shift associates Driver",
+        "Route associates *Stop",
+        "Bus associates BusStatus",
+        "Driver associates DriverStatus",
+        "Driver associates Gender",
+        "Shift associates ShiftType",
+        "Shift associates TripStatus"
+    ]
+}
