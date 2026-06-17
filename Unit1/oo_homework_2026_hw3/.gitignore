@@ -1,0 +1,9 @@
+# IDEA
+out/
+.idea/
+test/
+*.iml
+META-INF/
+
+# OS FILE
+.DS_Store

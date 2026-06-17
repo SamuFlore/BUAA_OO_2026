@@ -1,0 +1,17 @@
+# IDEA
+out/
+.idea/
+*.iml
+META-INF/
+
+# OS FILE
+.DS_Store
+
+# TestMain
+TestMain.java
+
+# 官方包
+面向对象第四单元第三次作业官方包
+
+# PDF
+*.pdf
